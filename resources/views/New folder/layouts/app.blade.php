@@ -29,7 +29,10 @@
 
             <!-- Page Content -->
             <main>
-                {{ $slot }}
+                <div class="row card">
+
+                    {{ $slot }}
+                </div>
             </main>
         </div>
     </body>
