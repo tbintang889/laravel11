@@ -1,4 +1,4 @@
 <x-admin.app title="HASA">
 
-  <label for=""> asas</label>
+  <label for="" class="label"> HAY</label>
 </x-admin.app>
