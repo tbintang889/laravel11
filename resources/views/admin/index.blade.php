@@ -1,4 +1,3 @@
-<x-admin.app title="HASA">
+<x-admin.app title="{{ __('DASHBOARD') }}">
 
-  <label for="" class="label"> HAY</label>
 </x-admin.app>

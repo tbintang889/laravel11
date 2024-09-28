@@ -2,7 +2,7 @@
 <html lang="en"> <!--begin::Head-->
 
 <x-admin.layout.head title="{{ $title }}"></x-admin.layout.head>
-
+@props(['title'=>'Dashboad','module'=>'Home'])
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary"> <!--begin::App Wrapper-->
     <div class="app-wrapper"> <!--begin::Header-->
     <x-admin.layout.nav></x-admin.layout.nav>
@@ -18,7 +18,7 @@
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-end">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">{{ $module }}</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">
                                     {{ $title }}
                                 </li>
