@@ -1,7 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Modules\Role\Controllers\RoleController;
+use App\Modules\User\Controllers\UserController;
 use App\Modules\Profile\Controllers\ProfileController;
+use App\Modules\Permission\Controllers\PermissionController;
+
 
 Route::middleware('auth')->group(
     function () {
@@ -21,6 +25,23 @@ Route::middleware('auth')->group(
             Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
             Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
             Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+        });
+        Route::group(['namespace' => 'App\Modules\Role\Controllers'], function () {
+
+            Route::get('/role', [RoleController::class, 'index'])->name('role.index');
+            Route::get('/role/create', [RoleController::class, 'create'])->name('role.create');
+            Route::get('/role/edit/{id}', [RoleController::class, 'edit'])->name('role.edit');
+            Route::post('/role/store', [RoleController::class, 'store'])->name('role.store');
+            Route::put('/role/store', [RoleController::class, 'update'])->name('role.update');
+            Route::delete('/role/destroy/{id}', [RoleController::class, 'destroy'])->name('role.destroy');
+            Route::get('/role/{role}/permissions', [RoleController::class, 'editPermissions'])->name('role.edit_permissions');
+            Route::put('/role/{role}/permissions', [RoleController::class, 'updatePermissions'])->name('role.update_permissions');
+        });
+        Route::group(['middleware' => ['auth', 'role:admin']], function () {
+            Route::resource('permission', PermissionController::class);
+        });
+        Route::group(['middleware' => ['auth', 'role:admin']], function () {
+            Route::resource('user', UserController::class);
         });
     }
 );
