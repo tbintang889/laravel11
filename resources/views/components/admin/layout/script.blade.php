@@ -213,5 +213,25 @@
         );
         sparkline3.render();
     </script> <!--end::Script-->
+    <!-- ... kode sebelumnya ... -->
 
+<!-- Letakkan ini di bagian atas file, sebelum script lainnya -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+
+<!-- ... kode lainnya ... -->
+
+<!-- Letakkan ini di bagian bawah file -->
+<script>
+$(document).ready(function() {
+    $('.tbb').DataTable({
+
+    });
+});
+</script>
+
+{{ $slot }}
+
+{{ $slot }}
     {{ $slot }}
