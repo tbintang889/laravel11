@@ -6,7 +6,7 @@
                     <h3 class="card-title">{{$title}}  </h3>
                 </div>
                 <div class="col-6"> <a href="{{ route('item.create') }}" target="_blank" rel="noopener noreferrer"
-                        class="btn"> Tambah</a></div>
+                        class="btn  btn-outline-primary ">+ Tambah</a></div>
             </div>
 
 
