@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Modules\Item\Controllers\ItemController;
 use App\Modules\Role\Controllers\RoleController;
 use App\Modules\User\Controllers\UserController;
 use App\Modules\Profile\Controllers\ProfileController;
@@ -42,6 +43,14 @@ Route::middleware('auth')->group(
         });
         Route::group(['middleware' => ['auth', 'role:admin']], function () {
             Route::resource('user', UserController::class);
+        });
+        Route::group(['middleware' => ['auth', 'role:admin']], function () {
+            Route::get('/item', [itemController::class, 'index'])->name('item.index');
+            Route::get('/item/create', [itemController::class, 'create'])->name('item.create');
+            Route::get('/item/edit/{id}', [itemController::class, 'edit'])->name('item.edit');
+            Route::delete('/item/destroy/{id}', [itemController::class, 'destroy'])->name('item.destroy');
+            Route::post('/item/store', [itemController::class, 'store'])->name('item.store');
+            Route::put('/item/store/{item}', [itemController::class, 'update'])->name('item.update');
         });
     }
 );
