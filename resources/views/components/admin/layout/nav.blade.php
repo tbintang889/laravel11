@@ -2,7 +2,8 @@
      <div class="container-fluid"> <!--begin::Start Navbar Links-->
 
          <ul class="navbar-nav ms-auto"> <!--begin::Navbar Search-->
-
+             <li class="nav-item"> <a class="nav-link" data-lte-toggle="sidebar" href="#" role="button"> <i
+                         class="bi bi-list"></i> </a> </li>
              <li class="nav-item dropdown"> <a class="nav-link" data-bs-toggle="dropdown" href="#"> <i
                          class="bi bi-bell-fill"></i> <span class="navbar-badge badge text-bg-warning">15</span> </a>
                  <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end"> <span
@@ -42,8 +43,9 @@
                              <div class="col-4 text-center"> <a href="#">Friends</a> </div>
                          </div> <!--end::Row-->
                      </li> <!--end::Menu Body--> <!--begin::Menu Footer-->  --}}
-                     <li class="user-footer"> <a href="{{ route('profile.edit') }}" class="btn btn-default btn-flat">Profile</a> <a
-                             href="{{ route('logout') }}" class="btn btn-default btn-flat float-end">Sign out</a> </li>
+                     <li class="user-footer"> <a href="{{ route('profile.edit') }}"
+                             class="btn btn-default btn-flat">Profile</a> <a href="{{ route('logout') }}"
+                             class="btn btn-default btn-flat float-end">Sign out</a> </li>
                      <!--end::Menu Footer-->
                  </ul>
              </li> <!--end::User Menu Dropdown-->

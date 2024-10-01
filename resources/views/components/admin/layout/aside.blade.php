@@ -40,16 +40,21 @@
                  @endrole
                 @role(['admin'])
                     <li class="nav-item menu-open"> <a href="#" class="nav-link active"> <i
-                                class="nav-icon bi bi-gear"></i>
+                                class="nav-icon bi bi-book"></i>
                             <p>
                                 Master
                                 <i class="nav-arrow bi bi-chevron-right"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item"> <a href="{{ route('item.index') }}"  class="nav-link {{ ($menu=='Items')?'active':'' }} "> <i
+
+                             <li class="nav-item"> <a href="{{ route('item.index') }}"  class="nav-link {{ ($menu=='Items')?'active':'' }} "> <i
                                         class="nav-icon bi bi-circle"></i>
                                     <p>Item </p>
+                                </a> </li>
+                                 <li class="nav-item"> <a href="{{ route('customer.index') }}"  class="nav-link {{ ($menu=='Items')?'active':'' }} "> <i
+                                        class="nav-icon bi bi-circle"></i>
+                                    <p>Customer </p>
                                 </a> </li>
 
 
