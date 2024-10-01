@@ -2,11 +2,11 @@
 <html lang="en"> <!--begin::Head-->
 
 <x-admin.layout.head title="{{ $title }}"></x-admin.layout.head>
-@props(['title'=>'Dashboad','module'=>'Home'])
+@props(['title'=>'Dashboad','module'=>'Home','menu'=>'Dashboard'])
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary"> <!--begin::App Wrapper-->
     <div class="app-wrapper"> <!--begin::Header-->
-    <x-admin.layout.nav></x-admin.layout.nav>
-    <x-admin.layout.aside></x-admin.layout.aside>
+    <x-admin.layout.nav ></x-admin.layout.nav>
+    <x-admin.layout.aside menu="{{ $menu }}">  </x-admin.layout.aside>
 
 
         <main class="app-main"> <!--begin::App Content Header-->

@@ -1,3 +1,4 @@
+ @props(['menu'=>'Dashboard'])
  <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark"> <!--begin::Sidebar Brand-->
      <div class="sidebar-brand"> <!--begin::Brand Link--> <a href="{{ route('dashboard') }}" class="brand-link">
              <!--begin::Brand Image--> <img src="{{ asset('/') }}/dist/assets/img/AdminLTELogo.png" alt="AdminLTE Logo"
@@ -37,6 +38,24 @@
                          </ul>
                      </li>
                  @endrole
+                @role(['admin'])
+                    <li class="nav-item menu-open"> <a href="#" class="nav-link active"> <i
+                                class="nav-icon bi bi-gear"></i>
+                            <p>
+                                Master
+                                <i class="nav-arrow bi bi-chevron-right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item"> <a href="{{ route('item.index') }}"  class="nav-link {{ ($menu=='Items')?'active':'' }} "> <i
+                                        class="nav-icon bi bi-circle"></i>
+                                    <p>Item </p>
+                                </a> </li>
+
+
+                        </ul>
+                    </li>
+                @endrole
 
 
              </ul> <!--end::Sidebar Menu-->
