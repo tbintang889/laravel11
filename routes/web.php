@@ -6,7 +6,7 @@ use App\Modules\Role\Controllers\RoleController;
 use App\Modules\User\Controllers\UserController;
 use App\Modules\Profile\Controllers\ProfileController;
 use App\Modules\Permission\Controllers\PermissionController;
-
+use App\Modules\Customer\Controllers\CustomerController;
 
 Route::middleware('auth')->group(
     function () {
@@ -52,6 +52,15 @@ Route::middleware('auth')->group(
             Route::post('/item/store', [itemController::class, 'store'])->name('item.store');
             Route::put('/item/store/{item}', [itemController::class, 'update'])->name('item.update');
         });
+        Route::group(['middleware' => ['auth', 'role:admin']], function () {
+            Route::get('/customer', [CustomerController::class, 'index'])->name('customer.index');
+            Route::get('/customer/create', [CustomerController::class, 'create'])->name('customer.create');
+            Route::get('/customer/edit/{id}', [CustomerController::class, 'edit'])->name('customer.edit');
+            Route::delete('/customer/destroy/{id}', [CustomerController::class, 'destroy'])->name('customer.destroy');
+            Route::post('/customer/store', [CustomerController::class, 'store'])->name('customer.store');
+            Route::put('/customer/store/{customer}', [CustomerController::class, 'update'])->name('customer.update');
+        });
+
     }
 );
 
