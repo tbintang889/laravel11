@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('items', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->enum('category', array_column(itemCategory::cases(), 'value'));
+            $table->string('category');
             $table->string('unit_price');
             $table->timestamps();
         });
